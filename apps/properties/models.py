@@ -145,8 +145,8 @@ class Property(TimeStampedUUIDModel):
         verbose_name_plural = "Properties"
 
     def save(self, *args, **kwargs):
-        self.title = str.title(self.title)
-        self.description = str.capitalize(self.description)
+        self.title = str.title(self.title) # title be title cased
+        self.description = str.capitalize(self.description) # description be capitalized
         self.ref_code = "".join(
             random.choices(string.ascii_uppercase + string.digits, k=10)
         )
