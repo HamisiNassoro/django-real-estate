@@ -25,6 +25,8 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls.jwt')),
     path('api/profile/', include('apps.profiles.urls')),
     path('api/properties/', include('apps.properties.urls')),
+    path('api/properties/', include('apps.ratings.urls')),
+    path('api/properties/', include('apps.enquiries.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
