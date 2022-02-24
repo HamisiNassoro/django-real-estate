@@ -35,7 +35,7 @@ down-v:
 	docker-compose down -v
 
 volume:
-	docker-volume inspect real_estate_postgres_data
+	docker volume inspect real_estate_postgres_data
 
 estate-db:
 	docker-compose exec postgres-db psql --username=postgres --dbname=estate
