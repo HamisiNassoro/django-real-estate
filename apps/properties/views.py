@@ -11,11 +11,8 @@ from rest_framework.views import APIView
 from .exceptions import PropertyNotFound
 from .models import Property, PropertyViews
 from .pagination import PropertyPagination
-from .serializers import (
-    PropertyCreateSerializer,
-    PropertySerializer,
-    PropertyViewSerializer,
-)
+from .serializers import (PropertyCreateSerializer, PropertySerializer,
+                          PropertyViewSerializer)
 
 # Create your views here.
 
