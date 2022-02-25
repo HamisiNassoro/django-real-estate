@@ -9,6 +9,7 @@ from .models import Enquiry
 
 # Create your views here.
 
+
 @api_view(["POST"])
 @permission_classes([permissions.AllowAny])
 def send_enquiry_email(request):

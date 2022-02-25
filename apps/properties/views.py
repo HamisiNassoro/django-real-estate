@@ -11,8 +11,11 @@ from rest_framework.views import APIView
 from .exceptions import PropertyNotFound
 from .models import Property, PropertyViews
 from .pagination import PropertyPagination
-from .serializers import (PropertyCreateSerializer, PropertySerializer,
-                          PropertyViewSerializer)
+from .serializers import (
+    PropertyCreateSerializer,
+    PropertySerializer,
+    PropertyViewSerializer,
+)
 
 # Create your views here.
 
@@ -21,8 +24,12 @@ logger = logging.getLogger(__name__)
 
 class PropertyFilter(django_filters.FilterSet):
 
-    advert_type = django_filters.CharFilter(field_name="advert_type", lookup_expr="iexact")
-    property_type = django_filters.CharFilter(field_name="property_type", lookup_expr="iexact")
+    advert_type = django_filters.CharFilter(
+        field_name="advert_type", lookup_expr="iexact"
+    )
+    property_type = django_filters.CharFilter(
+        field_name="property_type", lookup_expr="iexact"
+    )
     price = django_filters.NumberFilter()
     price__gt = django_filters.NumberFilter(field_name="price", lookup_expr="gt")
     price__lt = django_filters.NumberFilter(field_name="price", lookup_expr="lt")
@@ -62,7 +69,9 @@ class ListAgentsPropertiesAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        queryset = Property.objects.filter(user=user).order_by("-created_at") ### Getting all properties of a certain user/agent
+        queryset = Property.objects.filter(user=user).order_by(
+            "-created_at"
+        )  ### Getting all properties of a certain user/agent
         return queryset
 
 
@@ -109,7 +118,9 @@ def update_property_api_view(request, slug):
         )
     if request.method == "PUT":
         data = request.data
-        serializer = PropertySerializer(property, data, many=False) # updating one instance
+        serializer = PropertySerializer(
+            property, data, many=False
+        )  # updating one instance
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
@@ -127,7 +138,8 @@ def create_property_api_view(request):
     if serializer.is_valid():
         serializer.save()
         logger.info(
-            f"property {serializer.data.get('title')} created by {user.username}")
+            f"property {serializer.data.get('title')} created by {user.username}"
+        )
         return Response(serializer.data)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -157,7 +169,7 @@ def delete_property_api_view(request, slug):
         else:
             data["failure"] = "Deletion failed"
         return Response(data=data)
-        
+
 
 #### Function based view to upload product image
 @api_view(["POST"])
@@ -244,4 +256,3 @@ class PropertySearchAPIView(APIView):
         serializer = PropertySerializer(queryset, many=True)
 
         return Response(serializer.data)
-

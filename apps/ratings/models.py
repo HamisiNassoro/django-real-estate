@@ -7,6 +7,7 @@ from real_estate.settings.base import AUTH_USER_MODEL
 
 # Create your models here.
 
+
 class Rating(TimeStampedUUIDModel):
     class Range(models.IntegerChoices):
         RATING_1 = 1, _("Poor")
@@ -41,4 +42,3 @@ class Rating(TimeStampedUUIDModel):
 
     def __str__(self):
         return f"{self.agent} rated at {self.rating}"
-

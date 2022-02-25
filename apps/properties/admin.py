@@ -4,6 +4,7 @@ from .models import Property, PropertyViews
 
 # Register your models here.
 
+
 class PropertyAdmin(admin.ModelAdmin):
     list_display = ["title", "country", "advert_type", "property_type"]
     list_filter = ["advert_type", "property_type", "country"]

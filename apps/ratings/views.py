@@ -24,7 +24,8 @@ def create_agent_review(request, profile_id):
         return Response(formatted_response, status=status.HTTP_403_FORBIDDEN)
 
     alreadyExists = agent_profile.agent_review.filter(
-        agent__pkid=profile_user.pkid).exists()
+        agent__pkid=profile_user.pkid
+    ).exists()
 
     if alreadyExists:
         formatted_response = {"detail": "Profile already reviewed"}

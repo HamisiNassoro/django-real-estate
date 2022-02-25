@@ -11,7 +11,6 @@ class RatingSerializer(serializers.ModelSerializer):
         model = Rating
         exclude = ["updated_at", "pkid"]
 
-
     #### Since i said rater and agent are method fields , define as below:
 
     def get_rater(self, obj):

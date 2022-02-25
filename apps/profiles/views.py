@@ -9,6 +9,7 @@ from .serializers import ProfileSerializer, UpdateProfileSerializer
 
 # Create your views here.
 
+
 class AgentListAPIView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
     queryset = Profile.objects.filter(is_agent=True)

@@ -56,7 +56,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         return representation
 
 
-class  UpdateProfileSerializer(serializers.ModelSerializer):
+class UpdateProfileSerializer(serializers.ModelSerializer):
     country = CountryField(name_only=True)
 
     class Meta:

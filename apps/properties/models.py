@@ -21,7 +21,7 @@ class PropertyPublishedManager(models.Manager):
             super(PropertyPublishedManager, self)
             .get_queryset()
             .filter(published_status=True)
-        )#### The queryset will be called only if the published_status is true
+        )  #### The queryset will be called only if the published_status is true
 
 
 class Property(TimeStampedUUIDModel):
@@ -46,7 +46,9 @@ class Property(TimeStampedUUIDModel):
     )
 
     title = models.CharField(verbose_name=_("Property Title"), max_length=250)
-    slug = AutoSlugField(populate_from="title", unique=True, always_update=True) ### Means when title changes also update slug field
+    slug = AutoSlugField(
+        populate_from="title", unique=True, always_update=True
+    )  ### Means when title changes also update slug field
     ref_code = models.CharField(
         verbose_name=_("Property Reference Code"),
         max_length=255,
@@ -145,8 +147,10 @@ class Property(TimeStampedUUIDModel):
         verbose_name_plural = "Properties"
 
     def save(self, *args, **kwargs):
-        self.title = str.title(self.title) # title be title cased
-        self.description = str.capitalize(self.description) # description be capitalized
+        self.title = str.title(self.title)  # title be title cased
+        self.description = str.capitalize(
+            self.description
+        )  # description be capitalized
         self.ref_code = "".join(
             random.choices(string.ascii_uppercase + string.digits, k=10)
         )
@@ -168,7 +172,9 @@ class PropertyViews(TimeStampedUUIDModel):
     )
 
     def __str__(self):
-        return (f"Total views on - {self.property.title} is - {self.property.views} view(s)")
+        return (
+            f"Total views on - {self.property.title} is - {self.property.views} view(s)"
+        )
 
     class Meta:
         verbose_name = "Total Views on Property"
