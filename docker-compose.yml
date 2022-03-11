@@ -11,8 +11,13 @@ services:
             - .:/app
             - static_volume:/app/staticfiles
             - media_volume:/app/mediafiles
+
+        expose:
+            - "8000"
+
         # ports:
         #     - "8000:8000" ##first 8000 on container the other on machine
+        
         env_file:
             - .env
         depends_on:
