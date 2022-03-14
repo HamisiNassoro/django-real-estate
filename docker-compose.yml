@@ -25,7 +25,19 @@ services:
             - redis
 
         networks:
-            - estate-react ##can call it any name 
+            - estate-react ##can call it any name
+
+    client:
+        build:
+            context: ./client
+            dockerfile: Dockerfile.dev
+        restart: on-failure
+        volumes:
+            - ./client:/app  ##mapping current local directory to the app working directory inside the container
+            - /app/node_modules ##this helps avoid copying over local node_modules with the docker container
+        networks:
+            - estate-react
+
 
     postgres-db:
         image: postgres:12.0-alpine
