@@ -35,7 +35,11 @@ down-v:
 	docker-compose down -v
 
 volume:
+<<<<<<< HEAD
 	docker volume inspect real_estate_postgres_data
+=======
+	docker-volume inspect django_real_estate_postgres_data
+>>>>>>> 902181add14f8a243a1f616d2902fedbedf60dc4
 
 estate-db:
 	docker-compose exec postgres-db psql --username=postgres --dbname=estate
@@ -60,12 +64,12 @@ black:
 	docker-compose exec api black --exclude=migrations .
 
 isort-check:
-	docker-compose exec api isort . --check-only --skip env --skip migrations
+	docker-compose exec api isort . --check-only --skip venv --skip migrations
 
 isort-diff:
-	docker-compose exec api isort . --diff --skip env --skip migrations
+	docker-compose exec api isort . --diff --skip venv --skip migrations
 
 isort:
-	docker-compose exec api isort . --skip env --skip migrations
+	docker-compose exec api isort . --skip venv --skip migrations
 
 
