@@ -60,12 +60,12 @@ black:
 	docker-compose exec api black --exclude=migrations .
 
 isort-check:
-	docker-compose exec api isort . --check-only --skip env --skip migrations
+	docker-compose exec api isort . --check-only --skip venv --skip migrations
 
 isort-diff:
-	docker-compose exec api isort . --diff --skip env --skip migrations
+	docker-compose exec api isort . --diff --skip venv --skip migrations
 
 isort:
-	docker-compose exec api isort . --skip env --skip migrations
+	docker-compose exec api isort . --skip venv --skip migrations
 
 
