@@ -36,10 +36,14 @@ down-v:
 
 volume:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	docker volume inspect real_estate_postgres_data
 =======
 	docker-volume inspect django_real_estate_postgres_data
 >>>>>>> 902181add14f8a243a1f616d2902fedbedf60dc4
+=======
+	docker volume inspect django_real_estate_postgres_data
+>>>>>>> cea0e2d2d04ce52a71e556c5bc9309523d46955d
 
 estate-db:
 	docker-compose exec postgres-db psql --username=postgres --dbname=estate

@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import { Provider } from "react-redux";
+>>>>>>> cea0e2d2d04ce52a71e556c5bc9309523d46955d
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from "./store";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
+<<<<<<< HEAD
   </React.StrictMode>,
 =======
 import { Provider } from "react-redux";
@@ -21,6 +27,9 @@ ReactDOM.render(
     <App />
   </Provider>,
 >>>>>>> 902181add14f8a243a1f616d2902fedbedf60dc4
+=======
+  </Provider>,
+>>>>>>> cea0e2d2d04ce52a71e556c5bc9309523d46955d
   document.getElementById('root')
 );
 

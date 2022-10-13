@@ -7,9 +7,16 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "axios": "^0.26.1",
+>>>>>>> cea0e2d2d04ce52a71e556c5bc9309523d46955d
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
+<<<<<<< HEAD
 =======
     "antd": "^4.19.2",
     "axios": "^0.26.1",
@@ -18,11 +25,16 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
+=======
+>>>>>>> cea0e2d2d04ce52a71e556c5bc9309523d46955d
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
     "swr": "^1.2.2",
+<<<<<<< HEAD
 >>>>>>> 902181add14f8a243a1f616d2902fedbedf60dc4
+=======
+>>>>>>> cea0e2d2d04ce52a71e556c5bc9309523d46955d
     "web-vitals": "^2.1.4"
   },
   "scripts": {
