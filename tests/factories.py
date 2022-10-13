@@ -6,7 +6,7 @@ from real_estate.settings.base import AUTH_USER_MODEL
 
 faker = FakerFactory.create()
 
-
+##since a signal is sent once a user is created we mute the signals here for testing purposes
 @factory.django.mute_signals(post_save)
 class ProfileFactory(factory.django.DjangoModelFactory):
     user = factory.SubFactory("tests.factories.UserFactory")
@@ -43,6 +43,7 @@ class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = AUTH_USER_MODEL
 
+    ##method to control wheather we create a normal user or a superuser
     @classmethod
     def _create(cls, model_class, *args, **kwargs):
         manager = cls._get_manager(model_class)

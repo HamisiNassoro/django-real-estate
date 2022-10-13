@@ -1,3 +1,6 @@
+##where we define our fixtures
+##Fixtures are functions which will run before each test function to which its applied
+
 import pytest
 from pytest_factoryboy import register
 
