@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from "react"
-import './App.css';
-
-function App() {
-  return (
-    <div>
-      <h1>Real Estate</h1>
-      <p>The real test starts here...</p>
-      
-    </div>
-  );
-=======
 import { Layout } from "antd";
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -43,7 +30,6 @@ function App() {
 			</Layout>
 		</Router>
 	);
->>>>>>> 902181add14f8a243a1f616d2902fedbedf60dc4
 }
 
 export default App;
